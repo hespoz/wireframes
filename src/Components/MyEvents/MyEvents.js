@@ -4,18 +4,18 @@ import {
     withRouter
 } from 'react-router-dom';
 
-import VendorEvents from './VendorEvents.js'
-import BuyerOrders from './BuyerOrders.js'
+import VendorEventsContainer from './Vendor/VendorEventsContainer.js'
+import BuyerOrdersContainer from './Buyer/BuyerOrdersContainer.js'
 
 
 const MyEvents = withRouter((props) => {
   
     const { history } = props
     let userType = "VENDOR"
-    if (userType === "VENDOR") {
-        return <VendorEvents/>
+    if (userType === "VENDOR1") {
+        return <VendorEventsContainer/>
     } else {
-        return <BuyerOrders/>
+        return <BuyerOrdersContainer/>
     }
 
 })

@@ -22,9 +22,9 @@ const Order = (props) => (
           <Card.Description>   
             <br/>       
             <List.List as='ul'>
-              <List.Item as='li'>2 Sancocho $20</List.Item>
-              <List.Item as='li'>3 Lechonas $30</List.Item>
-              <List.Item as='li'>40 Empanas $60</List.Item>
+              {props.items.map((item) => {
+                return <List.Item as='li'>{item}</List.Item>
+              })}
             </List.List>
           </Card.Description>
         </Card.Content>    

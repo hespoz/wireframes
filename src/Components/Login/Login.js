@@ -15,7 +15,7 @@ import {connect} from "react-redux";
 
 import store from 'store2'
 
-const fields = ['email', 'password'];
+const fields = ['email', 'password']; 
 
 const validate = values => {
     const { email, password } = values;

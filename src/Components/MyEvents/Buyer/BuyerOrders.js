@@ -12,6 +12,8 @@ const BuyerOrders = withRouter((props) => {
   
     const { history } = props
   
+    console.log(props.events)
+
     return (
 
     <div className={"top-event-list"}>
@@ -27,8 +29,9 @@ const BuyerOrders = withRouter((props) => {
            {/* Event list */}
            <div className={"offset-md-4 col-md-5"}>
               <List relaxed='very' verticalAlign='middle'>
-                <Order orderNumber={23423} eventName={"Fiesta Colombiana"} date={"21/03/2018 10:00"} location={"Landsberger Allee 65"} />
-                <Order orderNumber={22312} eventName={"Fiesta Colombiana"} date={"21/03/2018 10:00"} location={"Landsberger Allee 65"} />
+                {props.events.map((event) => {
+                    return <Order orderNumber={event.orderNumber} eventName={event.name} date={event.limitDate} location={event.location} items={event.items} />
+                })}
               </List>
            </div>
         </div>
